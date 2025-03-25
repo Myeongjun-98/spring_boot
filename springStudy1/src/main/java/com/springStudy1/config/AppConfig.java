@@ -9,13 +9,14 @@ import org.springframework.jdbc.datasource.DriverManagerDataSource;
 
 @Configuration
 public class AppConfig {
+
 	@Bean
 	public DataSource dataSource() {
 		DriverManagerDataSource ds = new DriverManagerDataSource();
 		ds.setDriverClassName("com.mysql.cj.jdbc.Driver");
-		ds.setUsername("kmj");
+		ds.setUsername("mjk");
 		ds.setPassword("1234");
-		ds.setUrl("jdbc:mysql://localhost:3306/kmj");
+		ds.setUrl("jdbc:mysql://localhost:3306/mjk");
 		return ds;
 	}
 	
@@ -24,13 +25,12 @@ public class AppConfig {
 		return new JdbcTemplate(dataSource);
 	}
 	
-	
 }
 
 /*
-	Configuration - 한마디로 스프링 설정하기 위한 클래스라고 메모해놓은 것
-		스프링 프레임워크에서 빈 등록, 의존성 주입, 환경설정을 관리하는 방법
-	
-	스프링 프레임워크에서 설정하는 방법은 xml, java기반, annotation기반이 있다.
-*/
+	Configuration - 한마디로 스프링 설정 하기 위한 클래스다 라고 메모 한것!!
+	    스프링 프레임워크에서 빈 등록, 의존성 주입, 환경설정을 관리하는 방법
+	    
+	  스프링 프레임워크에서 설정하는 방법은 xml, java기반, annotation 기반이 있다.
 
+*/

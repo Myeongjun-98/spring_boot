@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Insert title here</title>
+
+<link rel="stylesheet" href="./css/default.css">
+
+
+</head>
+<body>
+
+	<div id="wrap">
+		<div id="header">
+			<ul id="menuList">
+				<li class="menu"><a href="/bookSearch"></a>도서선택</li>
+				<li class="menu"><a href="/loans"></a>대출</li>
+				<li class="menu"><a href="/return"></a>반납</li>
+				<li class="menu"><a href="/bookEnroll"></a>도서등록</li>
+				<li class="menu"><a href="/goldLibrary"></a>황금도서관</li>
+			</ul>
+		</div>
+		<div id="loginWrap">
+			<div class="login-box">
+				<div class="login-area">
+					<form method="post" action="/signIn">
+						<div class="input-field">
+							<label>ID</label>
+							<input type="text">
+						</div>
+						<div class="input-field">
+							<label>PassWord</label>
+							<input type="password">
+						</div>
+						<div id="loginBtBox">
+							<a href="" class="login-bt">LOGIN</a>
+						</div>
+					</form>
+				</div>
+			</div>
+		</div>
+		
+		<!-- top 끝 -->
+		
+				
+	</div>
+
+</body>
+</html>

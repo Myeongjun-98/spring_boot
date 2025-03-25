@@ -5,14 +5,11 @@ public class TestB {
 	private String name;
 	
 	public TestB() {}
-	
-	public TestB(int num, String name) {
-		this.num = num;
-		this.name = name;
+	public TestB(int num,String name) {
+		this.num=num;
+		this.name=name;
 	}
-	
 	public TestB(int num) {
-		this.num = num;
+		this.num=num;
 	}
-	
 }
