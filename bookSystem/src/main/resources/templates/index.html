@@ -1,50 +1,51 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org">
+<html xmlns:th="http://www.thymeleaf.org"
+	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	layout:decorate="~{layout/default}">
+
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Insert title here</title>
-
-<link rel="stylesheet" href="./css/default.css">
-
-
+	<th:block layout:fragment="css">
+		<link rel="stylesheet" th:href="@{./css/index.css}">
+	</th:block>
+	
+	<th:block layout:fragment="script">
+		<script>
+			function send(){
+				let fm = document.getElementById("loginFm");
+				fm.submit();
+			}
+		</script>
+	</th:block>
 </head>
-<body>
 
-	<div id="wrap">
-		<div id="header">
-			<ul id="menuList">
-				<li class="menu"><a href="/bookSearch"></a>도서선택</li>
-				<li class="menu"><a href="/loans"></a>대출</li>
-				<li class="menu"><a href="/return"></a>반납</li>
-				<li class="menu"><a href="/bookEnroll"></a>도서등록</li>
-				<li class="menu"><a href="/goldLibrary"></a>황금도서관</li>
-			</ul>
-		</div>
+	<div layout:fragment="main" id="main">
 		<div id="loginWrap">
 			<div class="login-box">
 				<div class="login-area">
-					<form method="post" action="/signIn">
+					<form name = "loginFm" id = "loginFm" th:object="${memberDto}" method="post" action="/signIn">
 						<div class="input-field">
-							<label>ID</label>
-							<input type="text">
+							<label th:for="email">ID</label>
+							<input type="text" th:field="*{email}">
+							<!-- field에 *{}로 넣어줘야 name, id, value가 생김 -->
 						</div>
 						<div class="input-field">
-							<label>PassWord</label>
-							<input type="password">
+							<label th:for="password">PassWord</label>
+							<input type="password" th:field="*{password}">
 						</div>
+						
+						<p th:if="${fail}" 
+						style="color:red; font-size:13px;">
+						아이디 또는 비밀번호가 잘못되었습니다</p>
+						
+						
+						
 						<div id="loginBtBox">
-							<a href="" class="login-bt">LOGIN</a>
+							<a href="javascript:send();" class="login-bt">LOGIN</a>
 						</div>
 					</form>
 				</div>
 			</div>
 		</div>
-		
-		<!-- top 끝 -->
-		
-				
 	</div>
-
-</body>
+		
 </html>
