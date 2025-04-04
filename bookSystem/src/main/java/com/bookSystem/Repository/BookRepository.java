@@ -42,11 +42,8 @@ public interface BookRepository {
 	// 반납 메뉴 클릭 시 bookUse 테이블에 있는 도서목록 가져오기
 	public List<BookUse> findByMyLoan(int memberId);
 	// 반납하기
-	public List<BookUse> returnUpdate(int memberId);
+	public void returnUpdate(int id);
 		
-	// 대출 목록에 책 정보를 출력해야 하므로 mybasket테이블에 있는
-	// book_id를 통해 책 정보 조회하기, 하나씩 가져올거임
-//	public Book findMBById(int bookId);
 
 
 		

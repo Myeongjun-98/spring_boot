@@ -111,11 +111,11 @@ public class MainController {
 	/////////////////////////////////////////////////////////////////////////
 	
 	// 도서 제목 클릭하여 대출처리
-	@GetMapping("/loanSave")
+	@GetMapping("/myloanSave")
 	public String loanSave(@RequestParam("id") int id, 
 			@RequestParam("bookId") int bookId, HttpSession session) {
 		String email = (String)session.getAttribute("user");
-		bookService.myloanSave(id,bookId, email);
+		bookService.myloanSave(id, bookId, email);
 		
 		return "redirect:/loans";
 	}

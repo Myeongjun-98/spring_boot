@@ -113,7 +113,8 @@ public class BookService {
 		}
 
 		public void returnEx(int id) {
-			// TODO Auto-generated method stub
+			
+			bookRepository.returnUpdate(id);
 			
 		}
 		
