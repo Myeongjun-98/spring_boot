@@ -13,7 +13,7 @@ public class BoardDto {
 	private String content;	// 게시글 내용(필수입력, 5자 이상)
 	private String fileName;	// 게시글 첨부파일 또는 이미지)
 	
-	// dti -> entity
+	// dto -> entity
 	public static BoardEntity to(BoardDto boardDto) {
 		BoardEntity boardEntity = new BoardEntity();
 		

@@ -16,6 +16,7 @@ import com.talk.Dto.BoardDto;
 import com.talk.Dto.BoardListDto;
 import com.talk.Dto.CommentDto;
 import com.talk.Service.BoardService;
+import com.talk.Service.CommentService;
 
 import jakarta.servlet.http.HttpSession;
 
@@ -25,6 +26,8 @@ public class BoardController {
 	
 	@Autowired
 	private BoardService boardService;
+	@Autowired
+	private CommentService commentService;
 	
 	// 목록
 	@GetMapping("/index")
@@ -103,7 +106,10 @@ public class BoardController {
 	
 	@GetMapping("/commentSave")
 	public String commentSave(CommentDto commentDto, HttpSession session) {
-		return null;
+		String memberId = (String)session.getAttribute("user");
+		commentService.commentSave(commentDto, memberId);
+		
+		return "board/boardDetail";
 	}
 	
 	@GetMapping("/commentDelete")
